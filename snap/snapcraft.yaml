@@ -1,0 +1,22 @@
+name: mongodb
+base: core18
+version: "4.0"
+summary: MongoDB
+description: |
+  Document based database
+
+grade: devel
+confinement: devmode
+
+apps:
+  mongod:
+    daemon: simple
+    command: env LC_ALL=C mongod --bind_ip 127.0.0.1 --pidfilepath $SNAP_COMMON/mongod.pid --smallfiles --journal --dbpath=$SNAP_COMMON
+
+  mongo:
+    command: mongo
+
+parts:
+  fetch:
+    plugin: mongodb
+    version: "4.0"
