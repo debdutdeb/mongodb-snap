@@ -1,4 +1,4 @@
-name: mongodb
+name: mmongodb
 base: core18
 version: "4.0"
 summary: MongoDB
